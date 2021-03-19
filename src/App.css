@@ -36,3 +36,30 @@
     transform: rotate(360deg);
   }
 }
+
+/*.coverPhoto img{
+    width: 60vh;
+    height:auto;
+}
+nav ul li .active {
+    font-weight: 900;
+    color: black;
+    text-decoration: none;
+}
+
+nav ul li a {
+    color: black;
+    font-size: large;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    color:black;
+    font-weight:bolder;
+    text-decoration:none;
+}
+
+li{
+    list-style-type:none;
+}*/

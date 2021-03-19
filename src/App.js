@@ -1,11 +1,18 @@
-import logo from './logo.svg';
+import { MuiThemeProvider } from '@material-ui/core';
+import CssBaseline from "@material-ui/core/CssBaseline";
+import theme from './theme';
 import './App.css';
+import Root from './routes/Root'
 
 function App() {
-  return (
-    <div className="App">
+    return (
+        <MuiThemeProvider theme={theme}>
+            <CssBaseline/>
+            <Root/>
+        </MuiThemeProvider>
+/*    <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+      <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
@@ -18,8 +25,7 @@ function App() {
           Learn React
         </a>
       </header>
-    </div>
+    </div>*/
   );
 }
-
 export default App;
