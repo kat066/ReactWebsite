@@ -1,14 +1,25 @@
-import { MuiThemeProvider } from '@material-ui/core';
+import { MuiThemeProvider} from '@material-ui/core';
 import CssBaseline from "@material-ui/core/CssBaseline";
 import theme from './theme';
-import './App.css';
-import Root from './routes/Root'
-
+import NavBar from './components/NavBar';
+import { BrowserRouter as Router, Switch, Route,} from "react-router-dom";
+import MainPage from './routes/MainPage';
+import MyStory from './routes/MyStory';
 function App() {
     return (
         <MuiThemeProvider theme={theme}>
-            <CssBaseline/>
-            <Root/>
+            <CssBaseline />
+            <Router>
+                <NavBar />
+                <Switch>
+                    <Route path="/MyStory">
+                        <MyStory />
+                    </Route>
+                    <Route path="/">
+                        <MainPage />
+                    </Route>
+                </Switch>   
+            </Router>
         </MuiThemeProvider>
 /*    <div className="App">
       <header className="App-header">
@@ -28,4 +39,6 @@ function App() {
     </div>*/
   );
 }
+
+
 export default App;

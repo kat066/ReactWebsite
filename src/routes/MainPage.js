@@ -1,57 +1,42 @@
 import React from "react"
 import "../App.css";
-import { Box, Grid, Typography, CardMedia, withStyles } from '@material-ui/core'
-import cover from "../assets/images/cover.jpg"
-
+import {withStyles} from '@material-ui/core'
+import Home from "../components/Home"
+import About from "../components/About"
 const styles = {
-    overlay: {
-        position: 'absolute',
-        marginLeft: '40vw',
-        
+    avatar: {
+        height: '8vw',
+        width: '8vw',
+        margin: '2vh',
     },
-    container: {
-        position: 'relative',
-        whiteSpace: 'nowrap',
-    },
-   image: {
-        height: 'auto',
-        width: '50vw',
-    },
-    font: {
-        
-        fontWeight: 'bolder',
-        fontSize: '8vw',
-        '&:hover': {
-            color: '#8db1ab',
-        },
-    }
+
 };
 
 
-function MainPage (props) {
-    return (
-        <Box>
-            <Grid container >
-                <Grid item xs={3}>
-                </Grid>
-                <Grid item xs={3} style={styles.container}>
-                    <Box style={styles.overlay}>
-                        <Typography variant="h1" className={props.classes.font}>Kai Tan</Typography>
-                        <Typography variant="h1" className={props.classes.font}>谭凯文</Typography>
-                    </Box>
 
-                    <CardMedia src={cover} component="img" title="cover" style={styles.image} />
-                </Grid>
-                <Grid item xs={6} >
-                    <div>
+@withStyles(styles)
+class MainPage extends React.Component{
+    render() {
+        return (
+            <div id="container">
+                <section id="one">
+                    <Home href="two"/> 
+                </section>
+                <section id="two">
+                    <About href="one"/>
+                </section>
+                <h1>abc</h1>
+                <div className="centerAbout">
+                </div>
+                <div className="centerAbout">
+                </div>
+                <div className="centerAbout">
+                </div>
+            </div>
 
-                    </div>
-                </Grid>
-
-            </Grid>
-        </Box>
-
-    );
+        );
+    }
+    
 }
 
-export default withStyles(styles)(MainPage);
+export default MainPage;
