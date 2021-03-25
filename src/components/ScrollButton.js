@@ -19,12 +19,12 @@ function handleClick(href){
     window.scroll({ top: topOfElement, behavior: "smooth" });
 }
 
-function ScrollButton(props={ href: "", transform: "scaleY(1)" }) {
+function ScrollButton(props={ href: "", transform: "scaleY(1)",color:"secondary" }) {
     const classes = useStyles(props);
 
     return (
-        <IconButton onClick={handleClick.bind(this, props.href)} className={classes.position}>
-            <ArrowDown className={classes.icon}/>
+        <IconButton onClick={handleClick.bind(this, props.href)}>
+            <ArrowDown className={classes.icon} color={props.color} />
         </IconButton>
 
     );

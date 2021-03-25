@@ -27,7 +27,7 @@ const styles = {
         fontWeight: 'bolder',
         fontSize: '10vw',
         '&:hover': {
-            color: '#8db1ab',
+            color: '#6a605c',
         },
     },
     spacer: {

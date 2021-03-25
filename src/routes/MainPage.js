@@ -15,15 +15,16 @@ const styles = {
 
 
 @withStyles(styles)
-class MainPage extends React.Component{
+class MainPage extends React.Component {
+    
     render() {
         return (
             <div id="container">
-                <section id="one">
-                    <Home href="two"/> 
+                <section id="home">
+                    <Home href="about"/> 
                 </section>
-                <section id="two">
-                    <About href="one"/>
+                <section id="about">
+                    <About href="home"/>
                 </section>
                 <h1>abc</h1>
                 <div className="centerAbout">
