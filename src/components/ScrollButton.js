@@ -1,7 +1,7 @@
 import React from "react"
 import "../App.css";
 import {makeStyles, IconButton } from '@material-ui/core'
-import ArrowDown from '@material-ui/icons/ArrowDropDownCircleOutlined';
+import ArrowDown from '@material-ui/icons/ArrowDropDownCircle';
 
 
 const useStyles = makeStyles({

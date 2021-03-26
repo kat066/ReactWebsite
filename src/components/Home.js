@@ -46,7 +46,7 @@ class Home extends React.Component {
                 </div>
                 <CardMedia src={cover} component="img" title="cover" className={this.props.classes.image} />
                 <div className={this.props.classes.spacer} />
-                <div className={"centerFlex"}>
+                <div className={"centerFlexCol"} style={{ margin: '0' }}>
                     <ScrollButton href={this.props.href} />
                 </div>
                 

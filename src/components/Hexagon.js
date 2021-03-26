@@ -38,7 +38,7 @@ class Hexatagon extends React.Component {
     animateDraw(points, borderLength,ratio) {
         ratio = ratio || 0;
         this.ratioDraw(points, ratio, borderLength);
-        if (ratio < 1) {
+        if (ratio < 1 && document.getElementById("myCanvas")!=null) {
             window.requestAnimationFrame((() => this.animateDraw(points, borderLength, ratio + 0.005)));
         }
 
@@ -92,47 +92,47 @@ class Hexatagon extends React.Component {
 
         ctx.strokeStyle = "#000000";
         ctx.lineWidth = 0.1;
-        ctx.font = "13px Georgia";
+        ctx.font = "15px Georgia";
         
         for (i = 0; i < 4; i++) {
             ctx.beginPath();
             ctx.moveTo(x, y);
             if (i === 0) {
-                ctx.fillStyle = "#ffffff";
+                ctx.fillStyle = "rgba(255, 255, 255, 0.5)";
                 ctx.fillText("C/C++", (x - (2*unit)), (y - unit));
             }
             x += length;
             ctx.lineTo(x, y);
             if (i === 0) {
-                ctx.fillStyle = "#ffffff";
+                ctx.fillStyle = "rgba(255, 255, 255, 0.5)";
                 ctx.fillText("Python", (x - (2 * unit)), (y - unit));
             }
             x += halfLength;
             y += yLength;
             ctx.lineTo(x, y);
             if (i === 0) {
-                ctx.fillStyle = "#ffffff";
-                ctx.fillText("Java", (x+unit), (y + (unit / 2)));
+                ctx.fillStyle = "rgba(255, 255, 255, 0.5)";
+                ctx.fillText("Java", (x+(unit/2)), (y + (unit / 2)));
             }
             x -= halfLength;
             y += yLength;
             ctx.lineTo(x, y);
             if (i === 0) {
-                ctx.fillStyle = "#ffffff";
+                ctx.fillStyle = "rgba(255, 255, 255, 0.5)";
                 ctx.fillText("Verilog", x, (y + (2 * unit)));
             }
             x -= length;
             ctx.lineTo(x, y);
             if (i === 0) {
-                ctx.fillStyle = "#ffffff";
+                ctx.fillStyle = "rgba(255, 255, 255, 0.5)";
                 ctx.fillText("JS/CSS/HTML", (0+unit), (y + (2 * unit)));
             }
             x -= halfLength;
             y -= yLength;
             ctx.lineTo(x, y);
             if (i === 0) {
-                ctx.fillStyle = "#ffffff";
-                ctx.fillText("Others", unit, (y + (unit/2)));
+                ctx.fillStyle = "rgba(255, 255, 255, 0.5)";
+                ctx.fillText("Others", (unit/2), (y + (unit/2)));
             }
             x += halfLength;
             y -= yLength;
@@ -187,7 +187,7 @@ class Hexatagon extends React.Component {
     drawn = false;
     render() {
         const style = {
- /*           border: "1px solid #ffffff",*/
+/*            border: "1px solid #ffffff",*/
         };
         
         return (

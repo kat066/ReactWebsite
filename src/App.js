@@ -1,8 +1,8 @@
-import { MuiThemeProvider} from '@material-ui/core';
-import CssBaseline from "@material-ui/core/CssBaseline";
-import theme from './theme';
-import NavBar from './components/NavBar';
-import {Switch, Route} from "react-router-dom";
+import { MuiThemeProvider } from '@material-ui/core'
+import CssBaseline from '@material-ui/core/CssBaseline'
+import theme from './theme'
+import NavBar from './components/NavBar'
+import {Switch, Route} from "react-router-dom"
 import MainPage from "./routes/MainPage"
 import MyStory from "./routes/MyStory"
 
