@@ -21,7 +21,8 @@ const styles = {
         height:'5vh',
     },
     button: {
-        maxHeight: '100%',
+        height: '100%',
+        fontSize: 'min(3vh,3vw)'
     }
 };
 

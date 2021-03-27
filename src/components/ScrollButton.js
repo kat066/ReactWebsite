@@ -8,6 +8,7 @@ const useStyles = makeStyles({
     icon: {
         fontSize: "5vmin",
         transform: props => props.transform,
+        color: props=> props.color,
     },
 
 });
@@ -24,7 +25,7 @@ function ScrollButton(props={ href: "", transform: "scaleY(1)",color:"secondary"
 
     return (
         <IconButton onClick={handleClick.bind(this, props.href)}>
-            <ArrowDown className={classes.icon} color={props.color} />
+            <ArrowDown className={classes.icon} />
         </IconButton>
 
     );

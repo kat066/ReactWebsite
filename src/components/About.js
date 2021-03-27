@@ -120,7 +120,7 @@ class About extends React.Component {
                     
 
                 
-                <ScrollButton className={this.props.classes.button} href={this.props.href} transform="scaleY(-1)" color="primary"/>
+                <ScrollButton className={this.props.classes.button} href={this.props.href} transform="scaleY(-1)" color="#ffffff"/>
             </div>
         );
     }

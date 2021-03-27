@@ -2,8 +2,10 @@
   "ExpandedNodes": [
     "",
     "\\src",
-    "\\src\\components",
-    "\\src\\routes"
+    "\\src\\assets",
+    "\\src\\assets\\icons",
+    "\\src\\assets\\images",
+    "\\src\\components"
   ],
   "SelectedNode": "\\src\\components\\Home.js",
   "PreviewInSolutionExplorer": false
