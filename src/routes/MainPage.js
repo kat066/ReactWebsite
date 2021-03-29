@@ -1,20 +1,11 @@
 import React from "react"
 import "../App.css";
-import {withStyles} from '@material-ui/core'
 import Home from "../components/Home"
 import About from "../components/About"
-const styles = {
-    avatar: {
-        height: '8vw',
-        width: '8vw',
-        margin: '2vh',
-    },
-
-};
+import Project from "../components/Project"
+import Footer from "../components/Footer"
 
 
-
-@withStyles(styles)
 class MainPage extends React.Component {
     
     render() {
@@ -23,16 +14,21 @@ class MainPage extends React.Component {
                 <section id="home">
                     <Home href="about"/> 
                 </section>
-                <section id="about">
-                    <About href="home"/>
+                <section id="about" >
+                    <About hrefUp="home" hrefDown="project"/>
                 </section>
-                <h1>abc</h1>
-                <div className="centerAbout">
+                <section id="project" >
+                    <Project hrefUp="about" hrefDown="project"/>
+                </section>
+                <section id="footer" >
+                    <Footer hrefUp="project"/>
+                </section>
+{/*                <div className="centerAbout">
                 </div>
                 <div className="centerAbout">
                 </div>
                 <div className="centerAbout">
-                </div>
+                </div>*/}
             </div>
 
         );

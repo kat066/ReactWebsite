@@ -82,83 +82,86 @@ class Hexatagon extends React.Component {
     DrawHexagon(borderLength) {
         var unit = borderLength / 20;
         var canvas = document.getElementById("myCanvas");
-        var ctx = canvas.getContext("2d");
-        var length = (borderLength - (6 * unit))/2;
-        var halfLength = length / 2;
-        var x = (borderLength - length) / 2+25;
-        var yLength = Math.sqrt(Math.pow(length, 2) - Math.pow((halfLength), 2));
-        var y = (borderLength - yLength * 2) / 2;
-        var i;
+        if (canvas != null) {
+            var ctx = canvas.getContext("2d");
+            var length = (borderLength - (6 * unit)) / 2;
+            var halfLength = length / 2;
+            var x = (borderLength - length) / 2 + 25;
+            var yLength = Math.sqrt(Math.pow(length, 2) - Math.pow((halfLength), 2));
+            var y = (borderLength - yLength * 2) / 2;
+            var i;
 
-        ctx.strokeStyle = "#000000";
-        ctx.lineWidth = 0.1;
-        ctx.font = "15px Georgia";
-        
-        for (i = 0; i < 4; i++) {
-            ctx.beginPath();
-            ctx.moveTo(x, y);
-            if (i === 0) {
-                ctx.fillStyle = "rgba(255, 255, 255, 0.5)";
-                ctx.fillText("C/C++", (x - (2*unit)), (y - unit));
+            ctx.strokeStyle = "#000000";
+            ctx.lineWidth = 0.1;
+            ctx.font = "15px Georgia";
+
+            for (i = 0; i < 4; i++) {
+                ctx.beginPath();
+                ctx.moveTo(x, y);
+                if (i === 0) {
+                    ctx.fillStyle = "rgba(255, 255, 255, 0.5)";
+                    ctx.fillText("C/C++", (x - (2 * unit)), (y - unit));
+                }
+                x += length;
+                ctx.lineTo(x, y);
+                if (i === 0) {
+                    ctx.fillStyle = "rgba(255, 255, 255, 0.5)";
+                    ctx.fillText("Python", (x - (2 * unit)), (y - unit));
+                }
+                x += halfLength;
+                y += yLength;
+                ctx.lineTo(x, y);
+                if (i === 0) {
+                    ctx.fillStyle = "rgba(255, 255, 255, 0.5)";
+                    ctx.fillText("Java", (x + (unit / 2)), (y + (unit / 2)));
+                }
+                x -= halfLength;
+                y += yLength;
+                ctx.lineTo(x, y);
+                if (i === 0) {
+                    ctx.fillStyle = "rgba(255, 255, 255, 0.5)";
+                    ctx.fillText("Verilog", x, (y + (2 * unit)));
+                }
+                x -= length;
+                ctx.lineTo(x, y);
+                if (i === 0) {
+                    ctx.fillStyle = "rgba(255, 255, 255, 0.5)";
+                    ctx.fillText("JS/CSS/HTML", (0 + unit), (y + (2 * unit)));
+                }
+                x -= halfLength;
+                y -= yLength;
+                ctx.lineTo(x, y);
+                if (i === 0) {
+                    ctx.fillStyle = "rgba(255, 255, 255, 0.5)";
+                    ctx.fillText("Others", (unit / 2), (y + (unit / 2)));
+                }
+                x += halfLength;
+                y -= yLength;
+                ctx.lineTo(x, y);
+                ctx.closePath();
+                if (i === 0) {
+                    ctx.fillStyle = "#546e7a";
+
+                } else if (i === 1) {
+                    ctx.fillStyle = "#455a64";
+
+                } else if (i === 2) {
+                    ctx.fillStyle = "#37474f";
+
+                } else if (i === 3) {
+                    ctx.fillStyle = "#263238";
+
+                }
+                ctx.fill();
+                ctx.stroke();
+                length -= (2 * unit);
+                halfLength = length / 2;
+                x = (borderLength - length) / 2 + 25;
+                yLength = Math.sqrt(Math.pow(length, 2) - Math.pow((halfLength), 2));
+                y = (borderLength - yLength * 2) / 2;
             }
-            x += length;
-            ctx.lineTo(x, y);
-            if (i === 0) {
-                ctx.fillStyle = "rgba(255, 255, 255, 0.5)";
-                ctx.fillText("Python", (x - (2 * unit)), (y - unit));
-            }
-            x += halfLength;
-            y += yLength;
-            ctx.lineTo(x, y);
-            if (i === 0) {
-                ctx.fillStyle = "rgba(255, 255, 255, 0.5)";
-                ctx.fillText("Java", (x+(unit/2)), (y + (unit / 2)));
-            }
-            x -= halfLength;
-            y += yLength;
-            ctx.lineTo(x, y);
-            if (i === 0) {
-                ctx.fillStyle = "rgba(255, 255, 255, 0.5)";
-                ctx.fillText("Verilog", x, (y + (2 * unit)));
-            }
-            x -= length;
-            ctx.lineTo(x, y);
-            if (i === 0) {
-                ctx.fillStyle = "rgba(255, 255, 255, 0.5)";
-                ctx.fillText("JS/CSS/HTML", (0+unit), (y + (2 * unit)));
-            }
-            x -= halfLength;
-            y -= yLength;
-            ctx.lineTo(x, y);
-            if (i === 0) {
-                ctx.fillStyle = "rgba(255, 255, 255, 0.5)";
-                ctx.fillText("Others", (unit/2), (y + (unit/2)));
-            }
-            x += halfLength;
-            y -= yLength;
-            ctx.lineTo(x, y);
-            ctx.closePath();
-            if (i === 0) {
-                ctx.fillStyle = "#546e7a";
-                
-            } else if (i === 1) {
-                ctx.fillStyle = "#455a64";
-                
-            } else if (i === 2) {
-                ctx.fillStyle = "#37474f";
-                
-            } else if (i === 3) {
-                ctx.fillStyle = "#263238";
-                
-            }
-            ctx.fill();
-            ctx.stroke();
-            length -= (2*unit);
-            halfLength = length / 2;
-            x = (borderLength - length) / 2+25;
-            yLength = Math.sqrt(Math.pow(length, 2) - Math.pow((halfLength), 2));
-            y = (borderLength - yLength * 2) / 2;           
         }
+        
         
     }
     Draw() {

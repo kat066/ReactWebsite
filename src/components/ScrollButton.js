@@ -7,9 +7,13 @@ import ArrowDown from '@material-ui/icons/ArrowDropDownCircle';
 const useStyles = makeStyles({
     icon: {
         fontSize: "5vmin",
-        transform: props => props.transform,
-        color: props=> props.color,
+        transform: props =>props.transform,
+        color: props => props.color,
+        "&:hover": {
+            opacity: "0.8",
+        }
     },
+
 
 });
 function handleClick(href){
@@ -20,12 +24,13 @@ function handleClick(href){
     window.scroll({ top: topOfElement, behavior: "smooth" });
 }
 
-function ScrollButton(props={ href: "", transform: "scaleY(1)",color:"secondary" }) {
+
+function ScrollButton(props = { href: "", transform: "scaleY(1)", color: "#ffffff"}) {
     const classes = useStyles(props);
 
     return (
         <IconButton onClick={handleClick.bind(this, props.href)}>
-            <ArrowDown className={classes.icon} />
+            <ArrowDown className={classes.icon}/>
         </IconButton>
 
     );

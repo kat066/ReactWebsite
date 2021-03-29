@@ -2,14 +2,16 @@ import React from "react"
 import "../App.css";
 import { Typography, CardMedia, withStyles, IconButton, SvgIcon,Popover} from '@material-ui/core'
 import InstagramIcon from '@material-ui/icons/Instagram';
+import EmailIcon from '@material-ui/icons/Email';
 import cover from "../assets/images/cover.jpg"
 import QR from "../assets/images/QR.jpg"
 import ScrollButton from "./ScrollButton"
 import { ReactComponent as WechatIcon } from "../assets/icons/wechatIcon.svg"
+
 const styles = {
     overlay: {
         position: 'absolute',
-        marginTop: '55vh',
+        marginTop: 'min(55vh,50vw)',
         marginLeft: '60%',
         zIndex: '10'
     },
@@ -38,17 +40,9 @@ const styles = {
     },
     Icon: {
         color: "#6a605c",
-        fontSize: 'min(8vh,8vw)',
-/*        marginTop:'min(1vh,1vw)',*/
+        fontSize: 'min(5vh,5vw)',
+        
     },
-/*    button: {
-        '&:hover': {
-            backgroundColor: '#ffffff',
-            borderColor: '#ffffff',
-            boxShadow: 'none',
-        },
-    },*/
-
 
 };
 
@@ -63,8 +57,6 @@ class Home extends React.Component {
     }
 
     handleClick(e) {
-        console.log(this.state.open);
-        console.log(e.currentTarget);
         this.setState({
             anchorEl : e.currentTarget,
             open : true});
@@ -90,10 +82,10 @@ class Home extends React.Component {
                 <div style={styles.spacer} /> 
                 <div className={"centerFlexCol"} style={{ margin: '0' }}>
                     <div style={styles.IconList}>
-                        <IconButton href="https://www.instagram.com/mrtamtamtam/?hl=en" target="_blank" style={styles.button}>
+                        <IconButton href="https://www.instagram.com/mrtamtamtam/?hl=en" target="_blank" style={styles.Button}>
                             <InstagramIcon style={styles.Icon} />
                         </IconButton>
-                        <IconButton aria-describedby="QR" variant="contained" onClick={this.handleClick.bind(this)} style={styles.button}>
+                        <IconButton aria-describedby="QR" variant="contained" onClick={this.handleClick.bind(this)} className={this.props.classes.Button}>
                             <SvgIcon component={WechatIcon} style={styles.Icon} viewBox="-51.45 -69.25 445.9 415.5" />
                         </IconButton>
                         <Popover
@@ -110,11 +102,11 @@ class Home extends React.Component {
                                 horizontal: 'left',
                             }}
                         >
-                            <img src={QR} style={{ width: 'min(30vh,30vw)' }} />
+                            <img src={QR} style={{ width: 'min(30vh,30vw)' }} alt="QR code for my wechat"/>
                         </Popover>
-
-
-
+                        <IconButton href=" mailto:kevint02221999@gmail.com" target="_blank" className={this.props.classes.Button}>
+                            <EmailIcon style={styles.Icon}/>
+                        </IconButton>
                     </div>
                     <ScrollButton href={this.props.href} color="#6a605c"/>
                 </div>

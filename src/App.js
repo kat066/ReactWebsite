@@ -6,6 +6,7 @@ import {Switch, Route} from "react-router-dom"
 import MainPage from "./routes/MainPage"
 import MyStory from "./routes/MyStory"
 
+
 function App() {
 
     return (
@@ -16,7 +17,7 @@ function App() {
                 <Route exact path="/MyStory">
                     <MyStory />
                 </Route>
-                <Route exact path={["/", "/home", "/about"]}>
+                <Route exact path={["/", "/home", "/about","/project","/footer"]}>
                     <MainPage/>
                 </Route>
 

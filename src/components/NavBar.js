@@ -1,6 +1,6 @@
 import React from "react";
-import { NavLink, withRouter} from "react-router-dom";
-import { Button, withStyles } from "@material-ui/core";
+import { withRouter} from "react-router-dom";
+import { withStyles } from "@material-ui/core";
 import MenuButton from "./MenuButton"
 const styles = {
     active: {
@@ -36,7 +36,9 @@ class NavBar extends React.Component {
             pathname: "/",
             homeButton: true,
             aboutButton: false,
-            storyButton:false,
+            projectButton: false,
+            storyButton: false,
+            footerButton: false,
         }
     }
     
@@ -48,19 +50,41 @@ class NavBar extends React.Component {
     UpdateNavBar() {
         let halfOffSet = window.innerHeight / 2;
         if (this.props.firstPage.includes(this.state.pathname)) {
-            if ((document.getElementById("about").offsetTop - document.getElementById("navBar").offsetHeight - window.pageYOffset) <= halfOffSet ) {
+            if ((document.getElementById("footer").offsetTop - document.getElementById("navBar").offsetHeight - window.pageYOffset) <= halfOffSet) {
+                this.props.history.replace('/footer', { activeNav: '/footer' });
+                this.setState({
+                    homeButton: false,
+                    aboutButton: false,
+                    projectButton: false,
+                    storyButton: false,
+                    footerButton: true,
+                });
+            } else if ((document.getElementById("project").offsetTop - document.getElementById("navBar").offsetHeight - window.pageYOffset) <= halfOffSet) {
+                this.props.history.replace('/project', { activeNav: '/project' });
+                this.setState({
+                    homeButton: false,
+                    aboutButton: false,
+                    projectButton: true,
+                    storyButton: false,
+                    footerButton: false,
+                });
+            }else if ((document.getElementById("about").offsetTop - document.getElementById("navBar").offsetHeight - window.pageYOffset) <= halfOffSet ) {
                 this.props.history.replace('/about', { activeNav: '/about' });
                 this.setState({
                     homeButton: false,
                     aboutButton: true,
+                    projectButton: false,
                     storyButton: false,
+                    footerButton: false,
                 });
-            } else {
+            }else {
                 this.props.history.replace('/', { activeNav: '/' });
                 this.setState({
                     homeButton: true,
                     aboutButton: false,
+                    projectButton: false,
                     storyButton: false,
+                    footerButton: false,
                 });
             }
         } else {
@@ -68,7 +92,9 @@ class NavBar extends React.Component {
             this.setState({
                 homeButton: false,
                 aboutButton: false,
+                projectButton: false,
                 storyButton: true,
+                footerButton: false,
             });
         }
     }
@@ -77,12 +103,17 @@ class NavBar extends React.Component {
                 this.setState({
                     homeButton: true,
                     aboutButton: false,
+                    projectButton: false,
+                    footerButton: false,
                     storyButton: false,
+                    
                 });
         } else {
             this.setState({
                 homeButton: false,
                 aboutButton: false,
+                projectButton: false,
+                footerButton: false,
                 storyButton: true,
             });
         }
@@ -109,17 +140,24 @@ class NavBar extends React.Component {
                         Home
                     </MenuButton>
                     <MenuButton href="about" to="/about" isActive={this.state.aboutButton}>
-                        about
+                        About
                     </MenuButton>
-                    <Button component={NavLink} activeClassName={this.props.classes.active} className={this.props.classes.button} to="/MyStory" isActive={(()=> {return this.state.storyButton})}>
+                    <MenuButton href="project" to="/project" isActive={this.state.projectButton}>
+                        Project
+                    </MenuButton>
+                    <MenuButton href="footer" to="/footer" isActive={this.state.footerButton}>
+                        Contact
+                    </MenuButton>
+{/*                    <Button component={NavLink} activeClassName={this.props.classes.active} className={this.props.classes.button} to="/MyStory" isActive={(()=> {return this.state.storyButton})}>
                             My Story
-                    </Button>
+                    </Button>*/}
                     
-                    </nav>
+                </nav>
+                
             </div>
 
         );
     };
 }
-NavBar.defaultProps = { firstPage: ["/","/about"]}
+NavBar.defaultProps = { firstPage: ["/", "/about", "/project", "/footer"]}
 export default withRouter(NavBar);

@@ -1,6 +1,6 @@
 import React from "react"
 import "../App.css";
-import { withStyles, Avatar, Typography,Grid} from '@material-ui/core'
+import { withStyles, Avatar, Typography} from '@material-ui/core'
 import profile from "../assets/images/avatar.jpg"
 import ScrollButton from "../components/ScrollButton"
 import Hexagon from "./Hexagon"
@@ -55,7 +55,7 @@ class About extends React.Component {
     render() {
 
         return (
-            <div className="centerFlexCol" id="about" style={{ backgroundColor: "black", margin:'auto'}}>
+            <div className="centerFlexCol" style={{ backgroundColor: "black",  margin: 'auto',}}>
                 <Typography style={{ color: '#6a605c', fontWeight: 'bold', letterSpacing: '0.2em' ,fontSize: '1.2rem', marginTop: '5%' }}>
                     About
                 </Typography>
@@ -92,7 +92,7 @@ class About extends React.Component {
                         <Typography style={styles.content}>
                             Kaiwen Tan
                         </Typography>
-                        <Typography sstyle={styles.category}>
+                        <Typography style={styles.category}>
                             BIRTHDAY:
                         </Typography>
                         <Typography style={styles.content}>
@@ -101,7 +101,7 @@ class About extends React.Component {
                         <Typography style={styles.category}>
                             EMAIL:
                         </Typography>
-                        <Typography sstyle={styles.content}>
+                        <Typography style={styles.content}>
                             Kevint02221999@gmail.com
                         </Typography>
                     </div>
@@ -117,10 +117,11 @@ class About extends React.Component {
                         <Hexagon strength={{ c: 1, python: 0.8, java: 0.9, verilog: 0.8, js: 0.9, others: 0.7 }} />
                     </div>
                 </div>
-                    
-
+                <div className="centerFlex">
+                    <ScrollButton className={this.props.classes.button} href={this.props.hrefUp} transform="scaleY(-1)" color="#ffffff" />
+                    <ScrollButton className={this.props.classes.button} href={this.props.hrefDown} color="#ffffff" />
+                </div>
                 
-                <ScrollButton className={this.props.classes.button} href={this.props.href} transform="scaleY(-1)" color="#ffffff"/>
             </div>
         );
     }
