@@ -4,7 +4,7 @@ import theme from './theme'
 import NavBar from './components/NavBar'
 import {Switch, Route} from "react-router-dom"
 import MainPage from "./routes/MainPage"
-import MyStory from "./routes/MyStory"
+import Blog from "./routes/Blog.js"
 
 
 function App() {
@@ -14,8 +14,8 @@ function App() {
             <CssBaseline />
                 <NavBar />
             <Switch>
-                <Route exact path="/MyStory">
-                    <MyStory />
+                <Route exact path="/blog">
+                    <Blog />
                 </Route>
                 <Route exact path={["/", "/home", "/about","/project","/footer"]}>
                     <MainPage/>

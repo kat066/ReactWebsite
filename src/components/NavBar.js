@@ -1,6 +1,6 @@
 import React from "react";
-import { withRouter} from "react-router-dom";
-import { withStyles } from "@material-ui/core";
+import { withRouter,NavLink  } from "react-router-dom";
+import { withStyles, Button} from "@material-ui/core";
 import MenuButton from "./MenuButton"
 const styles = {
     active: {
@@ -15,6 +15,7 @@ const styles = {
         top: '0',
         left: '0',
         right: '0',
+        width: '100vw',
         background: '#221e22',
         opacity: '0.8',
         zIndex: '999',
@@ -148,9 +149,9 @@ class NavBar extends React.Component {
                     <MenuButton href="footer" to="/footer" isActive={this.state.footerButton}>
                         Contact
                     </MenuButton>
-{/*                    <Button component={NavLink} activeClassName={this.props.classes.active} className={this.props.classes.button} to="/MyStory" isActive={(()=> {return this.state.storyButton})}>
-                            My Story
-                    </Button>*/}
+                    <Button component={NavLink} activeClassName={this.props.classes.active} className={this.props.classes.button} to="/Blog" isActive={(()=> {return this.state.storyButton})}>
+                            Blog
+                    </Button>
                     
                 </nav>
                 

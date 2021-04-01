@@ -17,6 +17,9 @@ const styles = {
         fontSize: '1.2rem',
         marginLeft: "25%",
     },
+    Icon: {
+        fontSize: '150%',
+    }
     
 }
 @withStyles(styles)
@@ -88,7 +91,7 @@ class Footer extends React.Component {
                         <Typography style={{
                             color: '#ffe8d6', fontWeight: 'bold',
                             letterSpacing: '0.2em', fontSize: '1.2rem'
-                            , marginTop: '5%',
+                            , marginLeft:'5px'
                         }}>
                             Wechat
                         </Typography>
