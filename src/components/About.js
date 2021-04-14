@@ -62,15 +62,18 @@ class About extends React.Component {
                 <Typography variant='h6' color= 'primary' style={{ fontWeight: 'bold' }}>
                     Hey,This is me!
                 </Typography>
-                <div className="centerFlex" style={{ marginLeft: '15%', marginRight: '15%' }}>
-                    <Avatar src={profile} className={this.props.classes.avatar} style={styles.centerSelf} />
+                <div style={{ marginLeft: '15%', marginRight: '15%' }}>
+                    <div className="centerFlex">
+                        <Avatar src={profile} className={this.props.classes.avatar} style={styles.centerSelf} />
 
-                    <Typography style={styles.intro}>
-                            I'm a 4th undergradaute majoring in Computer Science 
+                        <Typography style={styles.intro}>
+                            I'm a 4th undergradaute majoring in Computer Science
                             in University of California, San Deigo.
-                            My interest lies in using computer programming 
+                            My interest lies in using computer programming
                             to solve problems once and for all.
                         </Typography>
+                    </div>
+                    
                 </div>
                 
                 <div className="centerFlex">
@@ -118,8 +121,11 @@ class About extends React.Component {
                     </div>
                 </div>
                 <div className="centerFlex">
-                    <ScrollButton className={this.props.classes.button} href={this.props.hrefUp} transform="scaleY(-1)" color="#ffffff" />
-                    <ScrollButton className={this.props.classes.button} href={this.props.hrefDown} color="#ffffff" />
+                    <div>
+                        <ScrollButton className={this.props.classes.button} href={this.props.hrefUp} transform="scaleY(-1)" color="#ffffff" />
+                        <ScrollButton className={this.props.classes.button} href={this.props.hrefDown} color="#ffffff" />
+                    </div>
+                    
                 </div>
                 
             </div>

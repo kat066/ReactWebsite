@@ -3,19 +3,18 @@ import React from "react"
 import "../App.css"
 import ScrollButton from "../components/ScrollButton"
 import QR from "../assets/images/QR.jpg"
+import resume from "../assets/Kaiwen Tan Resume.pdf"
 import { ReactComponent as WechatIcon } from "../assets/icons/wechatIcon2.svg"
 import EmailIcon from '@material-ui/icons/Email';
+import DescriptionOutlinedIcon from '@material-ui/icons/DescriptionOutlined';
 
 const styles = {
-    center: {
-        marginLeft:"35%",
-    },
+
     title: {
         color: '#ffe8d6',
         fontWeight: 'bold',
-        letterSpacing: '0.1em',
+        letterSpacing: '0.2em',
         fontSize: '1.2rem',
-        marginLeft: "25%",
     },
     Icon: {
         fontSize: '150%',
@@ -52,12 +51,14 @@ class Footer extends React.Component {
                 <Typography style={{ color: '#ffe8d6', fontWeight: 'bold', letterSpacing: '0.2em', fontSize: '1.2rem', marginTop: '5%' }}>
                     Contact
                 </Typography>
-                <Typography variant='h6' color='primary' style={{ fontWeight: 'bold' }}>
+                <Typography variant='h6' color='primary' style={{ fontWeight: 'bold', marginLeft: '15%', marginRight: '15%' }}>
                     I'd Love To Connect With You.
                 </Typography>
                 <div className="centerFlex" >
-                    <div className="centerElementCol">
-                        <IconButton href=" mailto:kevint02221999@gmail.com" target="_blank" style={styles.center} >
+                    <div className="centerFlexCol">
+                        <IconButton href=" mailto:kevint02221999@gmail.com"
+                            target="_blank"
+                        >
                             <EmailIcon />
                         </IconButton>
                         <Typography style={styles.title}>
@@ -68,8 +69,11 @@ class Footer extends React.Component {
                             kevint02221999@gmail.com
                          </a>
                     </div>
-                    <div className="centerElementCol">
-                        <IconButton aria-describedby="QR" variant="contained" onClick={this.handleClick.bind(this)} className={this.props.classes.Button}>
+                    <div className="centerFlexCol">
+                        <IconButton aria-describedby="QR" variant="contained"
+                            onClick={this.handleClick.bind(this)}
+                            className={this.props.classes.Button}
+                        >
                             <SvgIcon component={WechatIcon} style={styles.Icon} viewBox="-51.45 -69.25 445.9 415.5" />
                         </IconButton>
                         <Popover
@@ -90,13 +94,21 @@ class Footer extends React.Component {
                         </Popover>
                         <Typography style={{
                             color: '#ffe8d6', fontWeight: 'bold',
-                            letterSpacing: '0.2em', fontSize: '1.2rem'
-                            , marginLeft:'5px'
+                            letterSpacing: '0.2em', fontSize: '1.2rem',
+                            marginTop: '-5%'
                         }}>
                             Wechat
                         </Typography>
                     </div>
-                   
+                    <div className="centerFlexCol">
+                        <IconButton href={resume} target="_blank">
+                            <DescriptionOutlinedIcon />
+                        </IconButton>
+                        <Typography className={this.props.classes.title}>
+                            Resume
+                            <br />
+                        </Typography>
+                    </div>
                     
                 </div>
                 <div className="centerFlex">

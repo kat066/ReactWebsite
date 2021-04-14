@@ -18,7 +18,7 @@ class MainPage extends React.Component {
                     <About hrefUp="home" hrefDown="project"/>
                 </section>
                 <section id="project" >
-                    <Project hrefUp="about" hrefDown="project"/>
+                    <Project hrefUp="about" hrefDown="footer"/>
                 </section>
                 <section id="footer" >
                     <Footer hrefUp="project"/>

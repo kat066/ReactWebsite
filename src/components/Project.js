@@ -100,8 +100,11 @@ class Project extends React.Component {
                     </ShowCard>
                 </div>
                 <div className="centerFlex">
-                    <ScrollButton className={this.props.classes.button} href={this.props.hrefUp} transform="scaleY(-1)" color="#212529" />
-                    <ScrollButton className={this.props.classes.button} href={this.props.hrefDown} color="#212529" />
+                    <div>
+                        <ScrollButton className={this.props.classes.button} href={this.props.hrefUp} transform="scaleY(-1)" color="#212529" />
+                        <ScrollButton className={this.props.classes.button} href={this.props.hrefDown} color="#212529" />
+                    </div>
+                    
                 </div>
             </div>   
 

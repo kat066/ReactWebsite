@@ -34,7 +34,7 @@ class NavBar extends React.Component {
         super(props);
         this.handleScroll = this.handleScroll.bind(this);
         this.state = {
-            pathname: "/",
+            pathname: this.props.history.location.pathname,
             homeButton: true,
             aboutButton: false,
             projectButton: false,
@@ -149,9 +149,9 @@ class NavBar extends React.Component {
                     <MenuButton href="footer" to="/footer" isActive={this.state.footerButton}>
                         Contact
                     </MenuButton>
-                    <Button component={NavLink} activeClassName={this.props.classes.active} className={this.props.classes.button} to="/Blog" isActive={(()=> {return this.state.storyButton})}>
+{/*                    <Button component={NavLink} activeClassName={this.props.classes.active} className={this.props.classes.button} to="/Blog" isActive={(()=> {return this.state.storyButton})}>
                             Blog
-                    </Button>
+                    </Button>*/}
                     
                 </nav>
                 
