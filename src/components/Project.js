@@ -88,7 +88,7 @@ class Project extends React.Component {
                         17 different instructions and 8 different registers.
                     </ShowCard>
                     <ShowCard
-                        href="/"
+                        href="https://github.com/kat066/ReactWebsite"
                         type="Web Development"
                         title="My personal website"
                         src={MySite}
