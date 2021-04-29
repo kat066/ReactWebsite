@@ -38,6 +38,7 @@ const styles = {
         color: '#B8BDB5',
         fontSize: '1rem',
         lineHeight: '2',
+        
     },
     propIntro: {
         color: '#D2D4C8',
@@ -65,13 +66,15 @@ class About extends React.Component {
                 <div style={{ marginLeft: '15%', marginRight: '15%' }}>
                     <div className="centerFlex">
                         <Avatar src={profile} className={this.props.classes.avatar} style={styles.centerSelf} />
-
-                        <Typography style={styles.intro}>
-                            I'm a 4th undergradaute majoring in Computer Science
-                            in University of California, San Deigo.
-                            My interest lies in using computer programming
-                            to solve problems once and for all.
-                        </Typography>
+                        <div style={{ width: '450px'}}>
+                            <Typography style={styles.intro}>
+                                I'm a 4th undergradaute majoring in Computer Science
+                                in University of California, San Deigo.
+                                My interest lies in using computer programming
+                                to solve problems once and for all.
+                            </Typography>
+                        </div>
+                        
                     </div>
                     
                 </div>
@@ -81,6 +84,7 @@ class About extends React.Component {
                         <Typography color='primary' style={styles.heading}>
                             PROFILE
                         </Typography>
+
                         <Typography style={styles.propIntro}>
                             Currently, I'm seeking a software engineering internship position 
                             perferbly in California. If you think I'm a good fit, 

@@ -28,7 +28,7 @@ class Project extends React.Component {
                 <Typography variant='h6' color='secondary' style={{ fontWeight: 'bolder' }}>
                     Come check out my creation!
                 </Typography>
-                <div className="centerFlex" >
+                <div className="centerFlexWrap" >
                     <ShowCard
                         href="https://tritongroups-c26fa.web.app/"
                         type="Web Development"
@@ -64,7 +64,7 @@ class Project extends React.Component {
                     </ShowCard>
       
                 </div>
-                <div className="centerFlex">
+                <div className="centerFlexWrap">
                     <ShowCard
                         href="https://www.youtube.com/watch?v=QTjq6bjy3jo"
                         type="C++ project"
