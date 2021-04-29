@@ -3,6 +3,7 @@ import "../App.css";
 import { Typography, CardMedia, withStyles, IconButton, SvgIcon,Popover} from '@material-ui/core'
 import InstagramIcon from '@material-ui/icons/Instagram';
 import EmailIcon from '@material-ui/icons/Email';
+import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import cover from "../assets/images/cover.jpg"
 import QR from "../assets/images/QR.jpg"
 import ScrollButton from "./ScrollButton"
@@ -84,6 +85,9 @@ class Home extends React.Component {
                     <div style={styles.IconList}>
                         <IconButton href="https://www.instagram.com/mrtamtamtam/?hl=en" target="_blank" style={styles.Button}>
                             <InstagramIcon style={styles.Icon} />
+                        </IconButton>
+                        <IconButton href="https://www.linkedin.com/in/kaiwen-tan-0a7bab154" target="_blank" style={styles.Button}>
+                            <LinkedInIcon style={styles.Icon} />
                         </IconButton>
                         <IconButton aria-describedby="QR" variant="contained" onClick={this.handleClick.bind(this)} className={this.props.classes.Button}>
                             <SvgIcon component={WechatIcon} style={styles.Icon} viewBox="-51.45 -69.25 445.9 415.5" />

@@ -6,6 +6,7 @@ import QR from "../assets/images/QR.jpg"
 import resume from "../assets/Kaiwen Tan Resume.pdf"
 import { ReactComponent as WechatIcon } from "../assets/icons/wechatIcon2.svg"
 import EmailIcon from '@material-ui/icons/Email';
+import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import DescriptionOutlinedIcon from '@material-ui/icons/DescriptionOutlined';
 
 const styles = {
@@ -54,7 +55,7 @@ class Footer extends React.Component {
                 <Typography variant='h6' color='primary' style={{ fontWeight: 'bold', marginLeft: '15%', marginRight: '15%' }}>
                     I'd Love To Connect With You.
                 </Typography>
-                <div className="centerFlex" >
+                <div className="centerFlexSpaceBetween" >
                     <div className="centerFlexCol">
                         <IconButton href=" mailto:kevint02221999@gmail.com"
                             target="_blank"
@@ -69,6 +70,19 @@ class Footer extends React.Component {
                             kevint02221999@gmail.com
                          </a>
                     </div>
+
+                    <div className="centerFlexCol">
+                        <IconButton href="https://www.linkedin.com/in/kaiwen-tan-0a7bab154/"
+                            target="_blank"
+                        >
+                            <LinkedInIcon />
+                        </IconButton>
+                        <Typography style={styles.title}>
+                            LinkedIn
+                            <br />
+                        </Typography>
+                    </div>
+
                     <div className="centerFlexCol">
                         <IconButton aria-describedby="QR" variant="contained"
                             onClick={this.handleClick.bind(this)}
