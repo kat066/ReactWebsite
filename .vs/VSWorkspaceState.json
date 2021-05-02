@@ -3,10 +3,11 @@
     "",
     "\\public",
     "\\src",
+    "\\src\\assets",
     "\\src\\auth",
     "\\src\\components",
     "\\src\\routes"
   ],
-  "SelectedNode": "\\src\\components\\About.js",
+  "SelectedNode": "\\src\\assets",
   "PreviewInSolutionExplorer": false
 }
