@@ -8,6 +8,6 @@
     "\\src\\components",
     "\\src\\routes"
   ],
-  "SelectedNode": "\\src\\assets",
+  "SelectedNode": "\\src\\auth\\Auth.js",
   "PreviewInSolutionExplorer": false
 }
