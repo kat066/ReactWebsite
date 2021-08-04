@@ -117,7 +117,7 @@ class About extends React.Component {
                             POWER LEVEL
                         </Typography>
                         <Typography style={styles.propIntro}>
-                            I'm an independent teamworker strong in quick-learing and solving problems. 
+                            I'm an independent teamworker strong in quick-learning and solving problems. 
                             I am most familiar with C++, but I can also pick up other languages in a short time.
                             Below is the power levels of some of my technical skills:
                         </Typography>
